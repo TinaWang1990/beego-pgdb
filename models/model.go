@@ -30,3 +30,12 @@ func init() {
 	//third mean:table is visible
 	orm.RunSyncdb("default", false, true)
 }
+
+///table column set
+//1. pk is primary key, auto : is auto increase
+//2. set default value: default(11)
+//3. set value length: size(100)
+//4. set value unique: unique
+//5. set decimal points: digits(12); decimals(4) ----total 12 digits and 4 decimals
+//6. set time: auto_now_add;type(datetime) --auto_now_add will update when data is changed and save
+//6. set time: auto_now;type(date) ---auto_now will update when save data in table
