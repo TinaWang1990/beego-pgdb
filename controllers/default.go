@@ -1,11 +1,7 @@
 package controllers
 
 import (
-	"app/models"
-	"fmt"
-
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
 )
 
 type MainController struct {
@@ -64,19 +60,19 @@ func (c *MainController) Get() {
 	// 	}
 	// }
 
-	//1.orm object
-	//2.delete object
-	//3.define delete which row
-	//4.delete
-	o := orm.NewOrm()
-	user := models.User{}
-	user.ID = 1
-	rows, err := o.Delete(&user)
-	if err != nil {
-		beego.Info(err)
-		return
-	}
-	fmt.Println(rows)
+	// //1.orm object
+	// //2.delete object
+	// //3.define delete which row
+	// //4.delete
+	// o := orm.NewOrm()
+	// user := models.User{}
+	// user.ID = 1
+	// rows, err := o.Delete(&user)
+	// if err != nil {
+	// 	beego.Info(err)
+	// 	return
+	// }
+	// fmt.Println(rows)
 
-	c.TplName = "index.html"
+	c.TplName = "websocket.html"
 }

@@ -5,6 +5,10 @@ import (
 	_ "github.com/lib/pq"
 )
 
+type Message struct {
+	Message string `json:"message"`
+}
+
 type User struct {
 	ID   int
 	Name string

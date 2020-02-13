@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sample of websocket with golang</title>
+    
+</head>
+<body>
+    <h1>after login ip will be showed here</h1>
+    <ul id="msg-list"></ul>
+    <button id="btn">test</button>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            var ws = new WebSocket('ws://' + window.location.host + '/ws');
+            ws.onmessage = function(e) {
+                $('<li>').text(event.data).appendTo($ul);
+                var obj = {};
+                obj.message = "websocket is active"+new Date().toLocaleString();
+                obj = JSON.stringify(obj);
+                ws.send(obj)
+
+                if(e.isTrusted){
+                    document.getElementById('btn').innerHTML = "START"
+                }
+                
+            };
+            var $ul = $('#msg-list');
+        });
+    </script>
+</body>
+</html>
